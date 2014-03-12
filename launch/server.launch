@@ -1,0 +1,9 @@
+<launch>
+  <arg name="map_file" default="$(find warehouse_simulator)/config/warehouse_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  
+  <arg name="config_file" default="$(find warehouse_simulator)/config/warehouse.yaml" />
+  <node name="warehouse_simulator_server" pkg="warehouse_simulator" type="server" output="screen">
+    <rosparam command="load" file="$(arg config_file)" />
+  </node>
+</launch>

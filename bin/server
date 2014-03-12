@@ -1,0 +1,18 @@
+#!/usr/bin/python
+'''
+Created on 2014-1-9
+
+@author: windywinter
+'''
+
+import rospy
+import warehouse_simulator
+from server.Warehouse import Warehouse
+
+if __name__ == '__main__':
+    try:
+        rospy.init_node('warehouse_simulator_server')
+        warehouse = Warehouse()
+        warehouse.mainloop()
+    except rospy.ROSInterruptException:
+        pass

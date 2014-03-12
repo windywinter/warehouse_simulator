@@ -1,0 +1,48 @@
+autonomous_localization: true
+simulator_step: 10
+
+import_fields: []
+export_fields: []
+recharge_fields: []
+gates: []
+
+operator:
+  uid: 0
+  action_topic: /operator/action
+  info_topic: /operator/info
+  order_topic: /operator/order
+
+robots:
+  - uid: 1
+    action_topic: /robot_1/action
+    cmd_vel_topic: /robot_1/cmd_vel
+    scan_topic: /robot_1/scan
+    odom_topic: /robot_1/odom
+    amcl_topic: /robot_1/amcl
+    vision_topic: /robot_1/vision
+    tf_prefix: /robot_1
+    robot_description:
+      pos: [4.0, 2.5]
+      footprint: [[0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1]]
+      actions:
+        lift:
+          battery_cost: 10.0
+        put:
+          battery_cost: 10.0
+      battery_max_quantity: 10000000.0
+      battery_recharge_rate: 100000.0
+      battery_cost_vel_linear: 0.0
+      battery_cost_vel_angular: 0.0
+      linear_accel_min: -10.0
+      linear_accel_max: 1.0
+      angular_accel_max: 3.14
+      linear_speed_max: 1.0
+      angular_speed_max: 3.14
+      laser_angle_min: -1
+      laser_angle_max: 1
+      laser_angle_increment: 0.01
+      laser_range_min: 0.12
+      laser_range_max: 10.0
+      vision_angle: 1.07
+      vision_range: 3.0
+
